@@ -2,6 +2,8 @@
 def print_matrix_integer(matrix=[[]]):
     if matrix is None:
         return None
+    if matrix == [[]]:
+        print("{}".format(""))
     for x in range(len(matrix)):
         for y in range(len(matrix[x])):
             if y != (len(matrix[x]) - 1):
