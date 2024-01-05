@@ -6,21 +6,7 @@ class Square:
     """Define square class."""
     def __init__(self, size=0):
         """define private attriubte size.
-        Args:
-            size (int): size of a square
-        """
-        self.size = size
-
-    @property
-    def size(self):
-        """getter property."""
-        return self.__size
-
-    @size.setter
-    def size(self, size):
-        """
-        setter method chacks if the size is either
-        an int of less than zero
+        check size is an int and of less than zero value
         then raises errors if not.
         Args:
             size (int): size of a square
