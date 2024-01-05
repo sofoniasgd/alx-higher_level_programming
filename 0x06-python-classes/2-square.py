@@ -4,7 +4,7 @@
 
 class Square:
     """Define square class."""
-    def __init__(self, size):
+    def __init__(self, size=0):
         """define private attriubte size.
         Args:
             size (int): size of a square
@@ -17,7 +17,7 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size=0):
+    def size(self, size):
         """
         setter method chacks if the size is either
         an int of less than zero
