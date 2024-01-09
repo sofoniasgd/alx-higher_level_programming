@@ -3,30 +3,38 @@ the ``0-add_integer`` module
 
 using ``add_integer``
 ---------------------
+usage:
+	add_integer(a, b)
+		where a and b are parameters of type int or float
 
 this is an example text file, first import add_integer
 	>>> add_integer = __import__('0-add_integer').add_integer
 
 Now use it to test various conditions:
+Combine float with int
 
 	>>> add_integer(1, 0.5)
 	1
-	>>> add_integer(10, 10)
-	20
 	>>> add_integer(1.4, 1.5)
 	2
+
+Int with another int
+
+	>>> add_integer(10, 10)
+	20
 	>>> add_integer(-1, -22)
 	-23
-	>>> add_integer(1, 1)
-	2
+
+Second argument is optional
+
+	>>> add_integer(2)
+	100
+
+Check if correct error is raised with non int or float types
+
 	>>> add_integer(1, '0')
 	Traceback (most recent call last):
 	TypeError: b must be an integer
 	>>> add_integer('0', 0)
 	Traceback (most recent call last):
 	TypeError: a must be an integer
-	>>> add_integer(1, 0)
-	1
-	>>> add_integer(1, 0)
-	1
-	
