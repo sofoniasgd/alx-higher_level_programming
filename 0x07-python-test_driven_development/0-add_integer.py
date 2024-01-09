@@ -12,10 +12,8 @@ def add_integer(a, b=98):
         TypeError: if any of the parameters are neither int nor float
     """
 
-    # raise type error if inputs are not int or float
-
-    if not (isinstance(a, int) or isinstance(a, float)):
+    if not (isinstance(a, int) or isinstance(a, float)) or a != a:
         raise TypeError('a must be an integer')
-    if not (isinstance(b, int) or isinstance(b, float)):
+    if not (isinstance(b, int) or isinstance(b, float)) or b != b:
         raise TypeError('b must be an integer')
     return (int(a) + int(b))

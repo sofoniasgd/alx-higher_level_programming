@@ -38,3 +38,9 @@ Check if correct error is raised with non int or float types
 	>>> add_integer('0', 0)
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+Check for nan values
+
+	>>> add_integer(float('nan'))
+	Traceback (most recent call last):
+        TypeError: a must be an integer
