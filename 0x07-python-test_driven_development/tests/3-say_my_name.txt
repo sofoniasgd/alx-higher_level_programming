@@ -1,0 +1,35 @@
+the ``3-say_my_name`` module
+======================
+
+using ``say_my_name``
+---------------------
+usage:
+	say_my_name(first_name, last_name)
+		arguments are first and last names
+
+this is an example text file, first import matrix_divided
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it to test various conditions:
+Normal condition(valid names)
+
+	>>> say_my_name("sofonias", "dubale")
+	My name is sofonias dubale
+
+First name containing non string values
+
+	>>> say_my_name(22, "dubale")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Last name containing non string values
+
+	>>> say_my_name("sofonias", 90)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+No strings
+
+	>>> say_my_name(22, 90)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
