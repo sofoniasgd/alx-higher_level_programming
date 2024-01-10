@@ -1,0 +1,64 @@
+the ``2-matrix_divided`` module
+======================
+
+using ``matrix_divided``
+---------------------
+usage:
+	matrix_divided(matrix, div)
+		where matrix is source matrix
+		and div is number to divide matrix with
+
+this is an example text file, first import matrix_divided
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it to test various conditions:
+Create a matrix first
+
+	>>> matrix = [[1,2], [3, 4], [5, 6]]
+
+Normal division
+
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67], [1.0, 1.33], [1.67, 2.0]]
+
+Matrix containing non int or float values
+
+	>>> matrix[1][1] = 'a'
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Single dimentional list
+
+	>>> matrix = [1, 2, 3]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Irregularly shaped list
+
+	>>> matrix = [[1, 2, 3], [4, 5]]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+Div is not a number
+
+	>>> matrix = [[1,2], [3, 4], [5, 6]]
+	>>> matrix_divided(matrix, float('nan'))
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Div is not a number 2
+
+	>>> matrix = [[1,2], [3, 4], [5, 6]]
+	>>> matrix_divided(matrix, 'a')
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+Div is zero
+
+	>>> matrix = [[1,2], [3, 4], [5, 6]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
