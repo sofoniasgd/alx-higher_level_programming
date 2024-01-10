@@ -1,0 +1,51 @@
+the ``4-print_square`` module
+======================
+
+using ``print_square``
+---------------------
+usage:
+	print_square(size)
+		arguments size- size of the square
+
+this is an example text file, first import print_square
+	>>> print_square = __import__('4-print_square').print_square
+
+Now use it to test various conditions:
+Normal condition(valid size)
+
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+Normal condition(valid size)
+
+	>>> print_square(2)
+	##
+	##
+
+Normal condition(valid size) but with float
+
+	>>> print_square(2.0)
+	##
+	##
+
+Negative size
+
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+Size is not an integer
+
+	>>> print_square('a')
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Size is a float and is less than zero
+
+	>>> print_square(-3.0)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
