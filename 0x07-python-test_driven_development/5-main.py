@@ -10,3 +10,9 @@ rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
 stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
 cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
 beatiorem! Iam ruinas videres""")
+
+print("---------")
+text_indentation("""sentence one. sentence two.""")
+print("---------")
+text_indentation("""1.         2?       3:           4.       5?          6:   7.""")
+print("---------")

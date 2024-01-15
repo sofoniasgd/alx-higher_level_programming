@@ -1,0 +1,72 @@
+the ``5-text_indentation`` module
+======================
+
+using ``text_indentation``
+---------------------
+usage:
+	text_indentation(text)
+		arguments text- text to be separated
+
+this is an example text file, first import print_square
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it to test various conditions:
+Normal condition(valid size, with period)
+
+	>>> text_indentation("""sentence one.sentence two.""")
+	sentence one.
+	<BLANKLINE>	
+	sentence two.
+
+Normal condition(valid size, with question mark)
+
+	>>> text_indentation("""sentence one?sentence two?""")
+	sentence one?
+	<BLANKLINE>	
+	sentence two?
+
+Normal condition(valid size, with colunm)
+
+	>>> text_indentation("""sentence one:sentence two:sentence three""")
+	sentence one:
+	<BLANKLINE>	
+	sentence two:
+	<BLANKLINE>
+	sentence three
+
+Normal condition with no delimiter at end of text
+
+	>>> text_indentation("""sentence one.sentence two""")
+	sentence one.
+	<BLANKLINE>
+	sentence two
+
+Input is not a string
+
+	>>> text_indentation(67)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+ 
+No input text
+
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+Combination of delimiters
+
+	>>> text_indentation("""1.         2?       3:           4.       5?          6:   7.""")
+	1.
+	<BLANKLINE>
+	2?
+	<BLANKLINE>
+	3:
+	<BLANKLINE>
+	4.
+	<BLANKLINE>
+	5?
+	<BLANKLINE>
+	6:
+	<BLANKLINE>
+	7.
+
