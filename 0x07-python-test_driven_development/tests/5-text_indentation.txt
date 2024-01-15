@@ -11,6 +11,11 @@ this is an example text file, first import print_square
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 Now use it to test various conditions:
+Normal condition(valid size, with no delimiter)
+
+	>>> text_indentation("""sentence one sentence two""")
+	sentence one sentence two
+
 Normal condition(valid size, with period)
 
 	>>> text_indentation("""sentence one.sentence two.""")
@@ -55,18 +60,12 @@ No input text
 
 Combination of delimiters
 
-	>>> text_indentation("""1.         2?       3:           4.       5?          6:   7.""")
+	>>> text_indentation("""1.2?3:4""")
 	1.
 	<BLANKLINE>
 	2?
 	<BLANKLINE>
 	3:
 	<BLANKLINE>
-	4.
-	<BLANKLINE>
-	5?
-	<BLANKLINE>
-	6:
-	<BLANKLINE>
-	7.
+	4
 
