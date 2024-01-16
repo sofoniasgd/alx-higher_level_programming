@@ -22,6 +22,7 @@ Normal condition(valid size, with period)
 	sentence one.
 	<BLANKLINE>	
 	sentence two.
+	<BLANKLINE>	
 
 Normal condition(valid size, with question mark)
 
@@ -29,6 +30,7 @@ Normal condition(valid size, with question mark)
 	sentence one?
 	<BLANKLINE>	
 	sentence two?
+	<BLANKLINE>	
 
 Normal condition(valid size, with colunm)
 

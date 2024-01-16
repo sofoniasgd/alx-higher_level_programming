@@ -19,14 +19,11 @@ def text_indentation(text=""):
     textlist = []
     while i < len(text):
         # find occurence of characters, skip if end of string reached
-        if text[i] == "." or text[i] == "?" or text[i] == ":":
-            if i == (len(text) - 1):
-                pass
-            else:
-                textlist.append(text[start:(i+1)])
-                start = i + 1
+        if text[i] in ".?:":
+            textlist.append(text[start:(i+1)] + "\n")
+            start = i + 1
         # end of text and no delimiter at end
-        if i == (len(text) - 1):
+        elif i == (len(text) - 1):
             textlist.append(text[start:])
         i += 1
     # print("number of sentences=> {}".format(len(textlist)))
@@ -45,6 +42,7 @@ def text_indentation(text=""):
         index += 1
     # Remove white space before text
     for i in textlist:
-        print("{}".format(i))
-        if i != textlist[len(textlist) - 1]:
-            print()
+        if i[-1:] == "\n":
+            print("{}".format(i))
+        else:
+            print("{}".format(i, end=''))
