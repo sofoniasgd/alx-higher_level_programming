@@ -20,7 +20,7 @@ def text_indentation(text=""):
     while i < len(text):
         # find occurence of characters, skip if end of string reached
         if text[i] in ".?:":
-            textlist.append(text[start:(i+1)] + "\n")
+            textlist.append(text[start:(i+1)])
             start = i + 1
         # end of text and no delimiter at end
         elif i == (len(text) - 1):
@@ -42,7 +42,8 @@ def text_indentation(text=""):
         index += 1
     # Remove white space before text
     for i in textlist:
-        if i[-1:] == "\n":
+        if i[-1] in ".?:": 
             print("{}".format(i))
+            print()
         else:
             print("{}".format(i, end=''))
