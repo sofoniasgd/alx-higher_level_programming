@@ -42,8 +42,7 @@ def text_indentation(text=""):
         index += 1
     # Remove white space before text
     for i in textlist:
-        if i[-1] in ".?:": 
-            print("{}".format(i))
-            print()
+        if i[-1:] == "\n":
+            print(i)
         else:
-            print("{}".format(i, end=''))
+            print(i, end="")
