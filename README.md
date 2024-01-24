@@ -1,7 +1,8 @@
-ALX high-level(Python) projects repo
+![python logo](https://www.python.org/static/img/python-logo.png) 
+# ALX high-level(Python) projects repo 
 
-finally python projects !!!
-i'm going to make some cool stuff with python
+### Finally python projects !!!
+### I'm going to make some cool stuff with python
 
 projects:  
 0x00. Python - Hello, World  
