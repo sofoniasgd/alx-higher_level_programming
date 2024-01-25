@@ -10,3 +10,6 @@ matrix = [
 new_matrix = square_matrix_simple(matrix)
 print(new_matrix)
 print(matrix)
+print("_______")
+new_matrix = [[x**2 for x in matrix[y]] for y in range(len(matrix))]
+print(new_matrix)
