@@ -19,29 +19,29 @@ test with negative value
 
 	>>> testbg.integer_validator("int1", -1)
 	Traceback (most recent call last):
-	ValueError: int1 must be greater than 0
+	ValueError: <name> must be greater than 0
 
 test with zero value
 
 	>>> testbg.integer_validator("int1", 0)
 	Traceback (most recent call last):
-	ValueError: int1 must be greater than 0
+	ValueError: <name> must be greater than 0
 
 test with string
 
 	>>> testbg.integer_validator("int1", "oh no")
 	Traceback (most recent call last):
-	TypeError: int1 must be an integer
+	TypeError: <name> must be an integer
 
 test with float
 
 	>>> testbg.integer_validator("int1", 1.01)
 	Traceback (most recent call last):
-	TypeError: int1 must be an integer
+	TypeError: <name> must be an integer
 
 test with bool
 
 	>>> testbg.integer_validator("int1", True)
 	Traceback (most recent call last):
-	TypeError: int1 must be an integer
+	TypeError: <name> must be an integer
 
