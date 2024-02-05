@@ -1,10 +1,9 @@
 the ``7-base_geometry`` module
 ==============================
 
-using ``area`` and ``integer_validator``
+using ``integer_validator``
 ----------------------------------------
 usage:
-	object.area()
 	object.integer_validator(name, value)
 	where object is the list object in question
 	name is always a string and
@@ -16,12 +15,6 @@ this is an example text file, first import module and setup test list object
 	>>> testbg = BaseGeometry()
 
 Now use it to test various conditions:
-test area method
-
-	>>> testbg.area()
-	Traceback (most recent call last):
-	Exception: area() is not implemented
-	
 test with negative value
 
 	>>> testbg.integer_validator("int1", -1)
@@ -43,6 +36,12 @@ test with string
 test with float
 
 	>>> testbg.integer_validator("int1", 1.01)
+	Traceback (most recent call last):
+	TypeError: <name> must be an integer
+
+test with bool
+
+	>>> testbg.integer_validator("int1", True)
 	Traceback (most recent call last):
 	TypeError: <name> must be an integer
 
