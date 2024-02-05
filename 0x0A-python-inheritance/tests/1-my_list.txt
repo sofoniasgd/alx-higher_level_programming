@@ -1,0 +1,68 @@
+the ``1-my_list`` module
+======================
+
+using ``print_sorted``
+---------------------
+usage:
+	object.print_sorted()
+	where object is the list object in question
+
+this is an example text file, first import module and setup test list object
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> testlist = MyList()
+
+Now use it to test various conditions:
+empty list sort
+
+	>>> testlist.print_sorted()
+	[]
+
+
+one member list sort
+
+	>>> testlist.append(5)
+	>>> testlist.print_sorted()
+	[5]
+
+add more members
+
+	>>> testlist.append(4)
+	>>> testlist.append(3)
+	>>> testlist.append(2)
+	>>> testlist.append(1)
+	>>> testlist.append(0)
+	>>> testlist.print_sorted()
+	[0, 1, 2, 3, 4, 5]
+	>>> print(testlist)
+	[5, 4, 3, 2, 1, 0]
+
+add float
+
+	>>> testlist.append(3.34)
+	>>> testlist.print_sorted()
+	[0, 1, 2, 3, 3.34, 4, 5]
+	>>> print(testlist)
+	[5, 4, 3, 2, 1, 0, 3.34]
+
+add string to list
+
+	>>> testlist.append("string")
+	>>> testlist.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'str' and 'int'
+	>>> print(testlist)
+	[5, 4, 3, 2, 1, 0, 3.34, 'string']
+	>>> testlist.pop()
+	'string'
+
+add list to list
+
+	>>> testlist.append([2, 1])
+	>>> testlist.print_sorted()
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'list' and 'int'
+	>>> print(testlist)
+	[5, 4, 3, 2, 1, 0, 3.34, [2, 1]]
+	>>> testlist.pop()
+	[2, 1]
