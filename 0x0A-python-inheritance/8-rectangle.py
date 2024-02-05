@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" task 5 module. """
+""" task 8 module. """
 
 
 class BaseGeometry():
-    """BaseGeometry class(does nothing)"""
+    """BaseGeometry class"""
 
     def area(self):
         """area method that is empty"""
@@ -25,3 +25,18 @@ class BaseGeometry():
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
+
+
+class Rectangle(BaseGeometry):
+    """Rectangle class
+    inherits from BseGeometry class
+    """
+
+    def __init__(self, width, height):
+        """initialization magic method
+        ckecks values of width and height
+        using integer_validator of parent class
+        """
+
+        BaseGeometry().integer_validator("width", width)
+        BaseGeometry().integer_validator("height", height)
