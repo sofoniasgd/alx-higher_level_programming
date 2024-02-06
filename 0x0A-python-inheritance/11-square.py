@@ -73,5 +73,4 @@ class Square(Rectangle):
     def __str__(self):
         """str() method to return specific text"""
 
-        r = Rectangle(self.__size, self.__size)
-        return str(r)
+        return "[Square] {}/{}".format(self.__size, self.__size)
