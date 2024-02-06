@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""task 1 module"""
+"""task 2 module"""
 
 
-def write_file(filename="", text=""):
-    """writes text to a file
+def append_write(filename="", text=""):
+    """writes text to a file, must append text if file exists
     Args:
         filename (str) name of file to be read
         text (str) text to be written
     function should:
         create the file if doesn’t exist
-        overwrite the content of the file if it already exists
     """
 
-    with open(filename, mode='w', encoding='utf-8') as f_file:
+    with open(filename, mode='a', encoding='utf-8') as f_file:
         return f_file.write(text)
