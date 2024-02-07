@@ -21,12 +21,12 @@ def add_item_to_json_file():
     list_1 = list()
     filename = "add_item.json"
 
-    # create the file if there are no arguments
-    if len(sys.argv) == 1:
+    # load json file to list_1, create file if it doesnt exist
+    try:
+        list_1 = load_from_json(filename)
+    except Exception:
         save_to_json(list_1, filename)
-        return
-    # load json file to a list, append arguments and save
-    list_1 = load_from_json(filename)
+    # append arguments and save
     for i in range(1, len(sys.argv)):
         list_1.append(sys.argv[i])
     save_to_json(list_1, filename)
