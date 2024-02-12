@@ -10,7 +10,7 @@ class Base:
     def __init__(self, id=None):
         """initializes class
         Args:
-            id (int) 
+            id (int)
         """
         if id:
             self.id = id
