@@ -28,3 +28,11 @@ class Student():
                     if string == key:
                         attributes[key] = value
         return attributes
+
+    def reload_from_json(self, json):
+        """replaces all attributes of the Student instance:
+            Args:
+                json (dict)
+        """
+        for key, value in json.items():
+            setattr(self, key, value)
