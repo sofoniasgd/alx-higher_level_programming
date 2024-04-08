@@ -7,7 +7,7 @@ if (!firstArgument) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < firstArgument; i++) {
-    text += '#';
+    text += 'x';
   }
   for (let j = 0; j < firstArgument; j++) {
     console.log(text);
