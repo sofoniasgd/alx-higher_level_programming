@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""GET ALL STATES"""
+"""GET ALL STATES(Task 0)"""
 
 import MySQLdb
 import sys
@@ -21,22 +21,18 @@ if __name__ == "__main__":
         db.commit()
         cur.close()
         db.select_db(dbname)
-    if (db):
-        print("database connected")
-    else:
-        print("database not connected")
     # create the table
     cur = db.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS states \
             (id INT NOT NULL AUTO_INCREMENT, \
             name VARCHAR(256) NOT NULL, \
             PRIMARY KEY (id) )")
-    cur.execute("INSERT INTO states (name) VALUES ('California'), ('Arizona'), ('Texas'), ('New York'), ('Nevada')")
+    cur.execute("INSERT INTO states (name) VALUES \
+            ('California'), ('Arizona'), ('Texas'), \
+            ('New York'), ('Nevada')")
     cur.execute("SELECT * FROM states ORDER BY id")
     db.commit()
     rows = cur.fetchall()
     for row in rows:
         print(row)
     cur.close()
-
-
