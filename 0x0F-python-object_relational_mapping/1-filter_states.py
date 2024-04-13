@@ -5,9 +5,6 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # exit if arguments are not 3
-    if len(sys.argv) != 4:
-        sys.exit()
     # store arguments into more readable names
     username, password, dbname = sys.argv[1:4]
     # connect to database
@@ -15,7 +12,7 @@ if __name__ == "__main__":
                          db=dbname, port=3306)
     cur = db.cursor()
     # execute and print query
-    cur.execute("SELECT * FROM states where name LIKE 'N%'")
+    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
