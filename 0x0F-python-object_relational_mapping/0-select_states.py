@@ -12,8 +12,8 @@ if __name__ == "__main__":
     password = sys.argv[2]
     dbname = sys.argv[3]
     # connect to database
-    db = MySQLdb.connect(host='localhost', user=username, \
-            passwd=password, port="3306")
+    db = MySQLdb.connect(host='localhost', user=username, passwd=password,
+                         port=3306)
     try:
         db.select_db(dbname)
     except MySQLdb.OperationalError:
