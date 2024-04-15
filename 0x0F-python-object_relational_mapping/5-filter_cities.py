@@ -19,6 +19,7 @@ if __name__ == "__main__":
     if (rows[0][0] is None):
         cur.close()
         db.close()
+        print("")
         sys.exit()
     cities = ""
     for city in rows[0]:
