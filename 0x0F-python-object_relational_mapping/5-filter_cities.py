@@ -16,6 +16,10 @@ if __name__ == "__main__":
                 states ON state_id=states.id WHERE states.name='{}' ORDER BY \
                 cities.id".format(state_name))
     rows = cur.fetchall()
+    if (rows[0][0] is None):
+        cur.close()
+        db.close()
+        sys.exit()
     cities = ""
     for city in rows[0]:
         cities += city
