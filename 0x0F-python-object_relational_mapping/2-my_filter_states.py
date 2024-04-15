@@ -12,7 +12,7 @@ if __name__ == "__main__":
                          db=dbname, port=3306)
     cur = db.cursor()
     # execute and print query
-    cur.execute(f'SELECT * FROM states WHERE name="{state_name}" ORDER BY id')
+    cur.execute(f'SELECT * FROM states WHERE name="{state_name}" ORDER BY id ASC')
     rows = cur.fetchall()
     for row in rows:
         print(row)
