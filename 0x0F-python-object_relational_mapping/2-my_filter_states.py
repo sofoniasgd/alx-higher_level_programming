@@ -1,15 +1,18 @@
 #!/usr/bin/python3
-"""  lists all states from the database hbtn_0e_0_usa """
+"""SEARCH ALL STATES WITH KEYWORD(Task 2)"""
+
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    # store arguments into more readable names
+    username, password, dbname, state_name = sys.argv[1:5]
+    # connect to database
+    db = MySQLdb.connect(host='localhost', user=username, passwd=password,
+                         db=dbname, port=3306)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}'"
-                .format(sys.argv[4]))
+    # execute and print query
+    cur.execute(f'SELECT * FROM states WHERE name="{state_name}" ORDER BY id')
     rows = cur.fetchall()
     for row in rows:
         print(row)
