@@ -16,7 +16,9 @@ if __name__ == "__main__":
                 states ON state_id=states.id WHERE states.name='{}' ORDER BY \
                 cities.id".format(state_name))
     rows = cur.fetchall()
-    for items in rows[0]:
-        print(items)
+    cities = ""
+    for city in rows[0]:
+        cities += city
+    print(cities.replace(",", ", "))
     cur.close()
     db.close()
