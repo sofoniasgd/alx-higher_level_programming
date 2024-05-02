@@ -8,7 +8,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         try:
             r = requests.get(sys.argv[1])
+            print(r.headers['X-Request-Id'])
         except Exception:
             pass
-        else:
-            print(r.headers['X-Request-Id'])
