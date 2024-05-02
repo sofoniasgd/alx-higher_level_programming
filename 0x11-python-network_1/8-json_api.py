@@ -5,7 +5,7 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) >= 1:
+    if len(sys.argv) > 1:
         arg = sys.argv[1]
     else:
         arg = ""
@@ -13,7 +13,7 @@ if __name__ == "__main__":
     try:
         json_txt = r.json()
     except Exception as e:
-        print(e)
+        print("Not a valid JSON")
     else:
         if len(json_txt) == 0:
             print("No result")
