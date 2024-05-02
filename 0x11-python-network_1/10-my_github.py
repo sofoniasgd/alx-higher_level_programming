@@ -9,9 +9,12 @@ import sys
 if __name__ == "__main__":
     username = sys.argv[1]
     token = sys.argv[2]
+    headers = {
+        "Authorization": f"token {token}",
+            }
     url = f"https://api.github.com/users/{username}"
 
-    data = requests.get(url, auth=(username, token)).json()
+    data = requests.get(url, headers=headers).json()
 
     # get id from json
     print(data.get("id"))
