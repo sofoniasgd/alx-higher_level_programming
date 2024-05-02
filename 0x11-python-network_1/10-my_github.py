@@ -13,4 +13,5 @@ url = f"https://api.github.com/users/{username}"
 
 data = requests.get(url, auth=(username, token)).json()
 
-print(data)
+# get id from json
+print(data['id'])
