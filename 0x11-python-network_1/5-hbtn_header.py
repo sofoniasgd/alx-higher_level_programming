@@ -6,6 +6,9 @@ import sys
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
-        r = requests.get(sys.argv[1])
-        if r:
+        try:
+            r = requests.get(sys.argv[1])
+        except Exception:
+            pass
+        else:
             print(r.headers['X-Request-Id'])
