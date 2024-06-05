@@ -12,6 +12,7 @@ let bJson, films, charList;
 let occurence = 0;
 
 // character id for “Wedge Antilles” is '18'
+const id = '18';
 
 request(url, (error, response, body) => {
   if (error) {
@@ -25,7 +26,7 @@ request(url, (error, response, body) => {
     charList = result.characters;
     // seach for the character id in every films character list
     charList.forEach(function (character) {
-      if (character.substr(43) === '18/') {
+      if (character.substr(43, 2) === id) {
         occurence++;
       }
     });
