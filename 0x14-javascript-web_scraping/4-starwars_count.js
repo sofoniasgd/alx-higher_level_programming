@@ -4,7 +4,7 @@ const request = require('request');
 const args = process.argv;
 
 const url = {
-  url: args[2],
+  url: args[2]
 };
 
 let bJson, films, charList;
@@ -25,7 +25,9 @@ request(url, (error, response, body) => {
     charList = result.characters;
     // seach for the character id in every films character list
     charList.forEach(function (character) {
-      if (character.substr(43, 2) === id) {
+      // split character string to get chracer id
+      const carr = character.split('/');
+      if (carr[carr.length - 2] === id) {
         occurence++;
       }
     });
