@@ -1,0 +1,18 @@
+#!/usr/bin/node
+
+const args = process.argv;
+
+const request = require('request');
+
+const url = {
+  url: args[2],
+};
+
+request(url, (error, response, body) => {
+  if (error) {
+    return console.error(error);
+  }
+  const json = JSON.parse(body);
+  json.forEach(function (result) {
+  console.log(json);
+});
