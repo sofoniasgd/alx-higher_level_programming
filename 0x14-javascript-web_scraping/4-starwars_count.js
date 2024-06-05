@@ -5,7 +5,6 @@ const args = process.argv;
 
 const url = {
   url: args[2],
-  method: 'GET'
 };
 
 let bJson, films, charList;
